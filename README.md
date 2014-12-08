@@ -33,7 +33,7 @@ Quick start
 ================
 ```
 git clone https://github.com/angeiv/Docker-Registry
-cd Docker-registry
+cd Docker-Registry
 chmod +x Docker-Registry.sh
 ./Docker-Registry.sh
 ```
