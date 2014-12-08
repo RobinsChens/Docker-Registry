@@ -2,6 +2,9 @@
 
 clear
 
+echo "Author Angeiv Zhang (Xing Zhang)"
+echo "https://github.com/angeiv"
+
 #Run as root user
 echo "1.Checking user..."
 echo "1.正在检测用户..."
@@ -97,7 +100,7 @@ cp -r docker-registry /
 echo -e "\tCopying config files..."
 echo -e "\t正在复制配置文件..."
 
-cp ./config/boto.cfg /etc/boto.cfg
+cp ./docker-registry/config/boto.cfg /etc/boto.cfg
 
 echo -e "\tFiles have been copyed!"
 echo -e "\t文件已经复制完毕！"
