@@ -36,6 +36,35 @@ git clone https://github.com/angeiv/Docker-Registry
 chmod +x Docker-registry.sh
 ./Docker-registry.sh
 ```
+
+You will see the information are given below when you install docker registry success:
+
+如果安装成功，你会看到如下信息：
+
+```
+angeiv@Registry:~$ docker-registry
+2014-12-08 23:18:12 [23714] [INFO] Starting gunicorn 19.1.0
+2014-12-08 23:18:12 [23714] [INFO] Listening at: http://0.0.0.0:5000 (23714)
+2014-12-08 23:18:12 [23714] [INFO] Using worker: gevent
+2014-12-08 23:18:12 [23721] [INFO] Booting worker with pid: 23721
+2014-12-08 23:18:13 [23722] [INFO] Booting worker with pid: 23722
+2014-12-08 23:18:13 [23723] [INFO] Booting worker with pid: 23723
+2014-12-08 23:18:13 [23724] [INFO] Booting worker with pid: 23724
+2014-12-08 23:18:13 [23714] [INFO] 4 workers
+08/Dec/2014:23:18:19 +0000 WARNING: Cache storage disabled!
+08/Dec/2014:23:18:19 +0000 WARNING: LRU cache disabled!
+08/Dec/2014:23:18:19 +0000 WARNING: Cache storage disabled!
+08/Dec/2014:23:18:19 +0000 WARNING: LRU cache disabled!
+08/Dec/2014:23:18:19 +0000 WARNING: Cache storage disabled!
+08/Dec/2014:23:18:19 +0000 WARNING: LRU cache disabled!
+08/Dec/2014:23:18:19 +0000 WARNING: Cache storage disabled!
+08/Dec/2014:23:18:19 +0000 WARNING: LRU cache disabled!
+08/Dec/2014:23:18:19 +0000 DEBUG: Will return docker-registry.drivers.file.Storage
+08/Dec/2014:23:18:19 +0000 DEBUG: Will return docker-registry.drivers.file.Storage
+08/Dec/2014:23:18:19 +0000 DEBUG: Will return docker-registry.drivers.file.Storage
+08/Dec/2014:23:18:19 +0000 DEBUG: Will return docker-registry.drivers.file.Storage
+```
+
 Configuration example
 ==================
 
