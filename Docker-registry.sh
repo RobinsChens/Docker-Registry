@@ -2,8 +2,9 @@
 
 clear
 
-echo "Author Angeiv Zhang (Xing Zhang)"
+echo "Author: Angeiv Zhang (Xing Zhang)"
 echo "https://github.com/angeiv"
+echo "License: GNU GENERAL PUBLIC LICENSE"
 
 #Run as root user
 echo "1.Checking user..."
