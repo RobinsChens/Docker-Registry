@@ -34,8 +34,8 @@ Quick start
 ```
 git clone https://github.com/angeiv/Docker-Registry
 cd Docker-registry
-chmod +x Docker-registry.sh
-./Docker-registry.sh
+chmod +x Docker-Registry.sh
+./Docker-Registry.sh
 ```
 
 You will see the information are given below when you install docker registry success:
