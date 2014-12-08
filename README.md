@@ -105,3 +105,52 @@ deb-src http://mirrors.aliyun.com/ubuntu trusty-security multiverse
 [global]
 index-url = http://pypi.douban.com/simple
 ```
+
+Q&A
+======================
+Q: Red information?如果看到红色文字提示，如下：
+```
+Exception:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/pip/basecommand.py", line 122, in main
+    status = self.run(options, args)
+  File "/usr/lib/python2.7/dist-packages/pip/commands/install.py", line 278, in run
+    requirement_set.prepare_files(finder, force_root_egg_info=self.bundle, bundle=self.bundle)
+  File "/usr/lib/python2.7/dist-packages/pip/req.py", line 1197, in prepare_files
+    do_download,
+  File "/usr/lib/python2.7/dist-packages/pip/req.py", line 1375, in unpack_url
+    self.session,
+  File "/usr/lib/python2.7/dist-packages/pip/download.py", line 572, in unpack_http_url
+    download_hash = _download_url(resp, link, temp_location)
+  File "/usr/lib/python2.7/dist-packages/pip/download.py", line 433, in _download_url
+    for chunk in resp_read(4096):
+  File "/usr/lib/python2.7/dist-packages/pip/download.py", line 421, in resp_read
+    chunk_size, decode_content=False):
+  File "/usr/lib/python2.7/dist-packages/urllib3/response.py", line 225, in stream
+    data = self.read(amt=amt, decode_content=decode_content)
+  File "/usr/lib/python2.7/dist-packages/urllib3/response.py", line 174, in read
+    data = self._fp.read(amt)
+  File "/usr/lib/python2.7/httplib.py", line 567, in read
+    s = self.fp.read(amt)
+  File "/usr/lib/python2.7/socket.py", line 380, in read
+    data = self._sock.recv(left)
+  File "/usr/lib/python2.7/ssl.py", line 341, in recv
+    return self.read(buflen)
+  File "/usr/lib/python2.7/ssl.py", line 260, in read
+    return self._sslobj.read(len)
+SSLError: The read operation timed out
+
+Storing debug log for failure in /home/angeiv/.pip/pip.log
+```
+A:Internet.国内用户可能因为网络原因导致pypi下载失败，请更换源或者重新安装。
+
+Q：Some Error?有错误提示：
+```
+10.Patching...
+10.正在安装补丁...
+patching file /usr/local/lib/python2.7/dist-packages/boto/connection.py
+Reversed (or previously applied) patch detected!  Assume -R? [n]
+Apply anyway? [n] n
+Skipping patch.
+```
+A：Enter is OK.之前安装过，重新安装时在这里提示，直接默认操作回车即可。第一个问你是不是想还原，如果选n，那么代表不还原，接下来就询问是不是还是要应用该补丁。
