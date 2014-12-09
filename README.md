@@ -101,7 +101,7 @@ deb-src http://mirrors.aliyun.com/ubuntu trusty-security multiverse
 
 *  pypi配置
 
-  在~/.pip/pip.conf文件中添加或修改
+  在~/.pip/pip.conf文件中添加或修改，如果没有该文件请先创建便于以后使用。
 ```
 [global]
 index-url = http://pypi.douban.com/simple
