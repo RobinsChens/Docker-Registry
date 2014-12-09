@@ -83,7 +83,7 @@ echo "6.正在安装依赖文件..."
 
 sleep 1
 
-apt-get install -y python-pip python-dev liblzma-dev libevent1-dev
+apt-get install -y python-pip python-dev liblzma-dev libevent1-dev python-gevent python-m2crypto swig openssl libssl-dev
 
 echo -e "\tInstalled complete!"
 echo -e "\t安装完毕！"
