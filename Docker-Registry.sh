@@ -180,5 +180,5 @@ echo -e "\033[32m\t文件已经复制！\033[0m"
 sleep 1
 
 #Run docker registry
-echo "13.Run docker registry,use \"docker-registry\" command,you can add command in /etc/rc.local"
-echo "13.安装完毕，可以执行docker-registry命令启动，可以将命令加入/etc/rc.local开机自动执行"
+echo "13.Run docker registry,use \"\033[32mdocker-registry\033[0m\" command,you can add command in /etc/rc.local"
+echo "13.安装完毕，可以执行\033[32mdocker-registry\033[0m命令启动，可以将命令加入/etc/rc.local开机自动执行"
