@@ -26,11 +26,11 @@ echo "2.Checking system version..."
 echo "2.正在检测系统版本..."
 sleep 1
 if [[ `cat /etc/issue | grep "14.04" | awk '{print $2}' | cut -c 1-5` = "14.04" ]];then
-	echo -e "\tSystem version matched."
-	echo -e "\t系统版本正确。"
+	echo -e "\033[32m\tSystem version matched.\033[0m"
+	echo -e "\033[32m\t系统版本正确。\033[0m"
 else
-	echo -e "\tYou must run on Ubuntu 14.04."
-	echo -e "\t此脚本必须在Ubuntu 14.04上运行。"
+	echo -e "\033[31m\tYou must run on Ubuntu 14.04.\033[0m"
+	echo -e "\033[31m\t此脚本必须在Ubuntu 14.04上运行。\033[0m"
 	exit
 fi
 
@@ -51,15 +51,15 @@ echo "4.正在检查git是否安装..."
 sleep 1
 
 if [[ `dpkg -l | grep -iw 'git[^-]' | awk '{print $1}' | cut -c 1-2` = "ii" ]];then
-	echo -e "\tGit have been already installed."
-	echo -e "\tgit已经安装。"
+	echo -e "\033[32m\tGit have been already installed.\033[0m"
+	echo -e "\033[32m\tgit已经安装。\033[0m"
 else
 	echo -e "\tInstalling git..."
 	echo -e "\t安装git..."
 	sleep 1
 	apt-get install -y git
-	echo -e "\tGit have been already installed."
-        echo -e "\tgit已经安装。"
+	echo -e "\033[32m\tGit have been already installed.\033[0m"
+        echo -e "\033[32m\tgit已经安装。\033[0m"
 fi
 
 sleep 1
@@ -72,8 +72,8 @@ sleep 1
 
 git clone https://github.com/docker/docker-registry
 
-echo -e "\tDownload complete!"
-echo -e "\t下载完毕！"
+echo -e "\033[32m\tDownload complete!\033[0m"
+echo -e "\033[32m\t下载完毕！\033[0m"
 
 sleep 1
 
@@ -85,8 +85,8 @@ sleep 1
 
 apt-get install -y python-pip python-dev liblzma-dev libevent1-dev python-gevent python-m2crypto swig openssl libssl-dev
 
-echo -e "\tInstalled complete!"
-echo -e "\t安装完毕！"
+echo -e "\033[32m\tInstalled complete!\033[0m"
+echo -e "\033[32m\t安装完毕！\033[0m"
 
 sleep 1
 
@@ -103,8 +103,8 @@ echo -e "\t正在复制配置文件..."
 
 cp ./docker-registry/config/boto.cfg /etc/boto.cfg
 
-echo -e "\tFiles have been copyed!"
-echo -e "\t文件已经复制完毕！"
+echo -e "\033[32m\tFiles have been copyed!\033[0m"
+echo -e "\033[32m\t文件已经复制完毕！\033[0m"
 
 sleep 1
 
@@ -116,8 +116,8 @@ sleep 1
 
 pip install /docker-registry/depends/docker-registry-core
 
-echo -e "\tCore files have been installed!"
-echo -e "\t核心文件安装完毕！"
+echo -e "\033[32m\tCore files have been installed!\033[0m"
+echo -e "\033[32m\t核心文件安装完毕！\033[0m"
 
 sleep 1
 
@@ -130,8 +130,8 @@ sleep 1
 
 pip install file:///docker-registry#egg=docker-registry[bugsnag,newrelic,cors]
 
-echo -e "\tFiles have been installed!"
-echo -e "\t文件已经安装完毕！"
+echo -e "\033[32m\tFiles have been installed!\033[0m"
+echo -e "\033[32m\t文件已经安装完毕！\033[0m"
 
 sleep 1
 
@@ -144,8 +144,8 @@ sleep 1
 
 patch $(python -c 'import boto; import os; print os.path.dirname(boto.__file__)')/connection.py < /docker-registry/contrib/boto_header_patch.diff
 
-echo -e "\tComplete!"
-echo -e "\t安装完毕！"
+echo -e "\033[32m\tComplete!\033[0m"
+echo -e "\033[32m\t安装完毕！\033[0m"
 
 sleep 1
 
@@ -159,8 +159,8 @@ export DOCKER_REGISTRY_CONFIG="docker-registry/config/config_sample.yml"
 export SETTINGS_FLAVOR="local"
 
 
-echo -e "\tEnviromen variables have been set!"
-echo -e "\t环境变量已经设置完毕"
+echo -e "\033[32m\tEnviromen variables have been set!\033[0m"
+echo -e "\033[32m\t环境变量已经设置完毕\033[0m"
 
 sleep 1
 
@@ -174,8 +174,8 @@ cp /docker-registry/config/config_sample.yml /usr/local/lib/python2.7/dist-packa
 mkdir -p /usr/local/lib/python2.7/dist-packages/docker_registry/lib/../../config/docker-registry/config/
 cp /docker-registry/config/config_sample.yml /usr/local/lib/python2.7/dist-packages/docker_registry/lib/../../config/docker-registry/config/config_sample.yml
 
-echo -e "\tFiles have been Copied!"
-echo -e "\t文件已经复制！"
+echo -e "\033[32m\tFiles have been Copied!\033[0m"
+echo -e "\033[32m\t文件已经复制！\033[0m"
 
 sleep 1
 
