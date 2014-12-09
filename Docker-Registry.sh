@@ -11,11 +11,11 @@ echo "1.Checking user..."
 echo "1.正在检测用户..."
 sleep 1
 if [ $UID = 0 ];then
-	echo -e "\tAll good..."
-	echo -e "\t权限检测正确..."
+	echo -e "\033[32m\tAll good...\033[0m"
+	echo -e "\033[32m\t权限检测正确...\033[0m"
 else
-	echo -e "\tYou must run as root."
-	echo -e "\t请用root用户执行此脚本。"
+	echo -e "\033[31m\tYou must run as root.\033[0m"
+	echo -e "\033[31m\t请用root用户执行此脚本。\033[0m"
 	exit
 fi
 
